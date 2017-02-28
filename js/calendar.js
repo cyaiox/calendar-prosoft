@@ -66,7 +66,7 @@ app.controller('calendarCtrl', function($scope) {
                     if (d.getFullYear() != actual_year) {
                         actual_year = d.getFullYear();
                         actual_month = d.getMonth();
-                        $scope.start_month = 0;
+                        //$scope.start_month = 0;
                         $scope.number_of_year++;
                         $scope.number_of_month = 0;
                         $scope.number_of_week = 0;
