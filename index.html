@@ -42,8 +42,8 @@
     </div>
 
     <div class="row" ng-if="show_calendar">
-        <!--<div class="col-lg-12">
-            <table class="table table-bordered">
+        <div class="col-lg-12">
+            <table class="table table-bordered" ng-repeat="month in calendar track by $index">
                 <thead>
                     <th>S</th>
                     <th>M</th>
@@ -53,22 +53,14 @@
                     <th>F</th>
                     <th>S</th>
                 </thead>
-                <tbody ng-repeat="month in calendar">
-                    <tr><td>{{ month }}</td></tr>
+                <tbody>
+                    <tr><td colspan="7" align="center">{{ months[start_month + $index]}}</td></tr>
                     <tr ng-repeat="week in month">
-                        <td ng-repeat="day in week"> {{ day }} </td>
+                        <td ng-repeat="day in week track by $index"> {{ day }} </td>
                     </tr>
                 </tbody>
             </table>
-        </div>-->
-
-        <ul>
-            <li ng-repeat="month in calendar"> {{month}}
-            <ul>
-                <li ng-repeat="week in month"> {{week}}</li>
-            </ul>
-            </li>
-        </ul>
+        </div>
 
     </div>
 
