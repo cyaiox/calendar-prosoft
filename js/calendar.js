@@ -76,10 +76,6 @@ app.controller('calendarCtrl', function($scope) {
                 days++;
             }
         }
-
-        console.log($scope.calendar);
-
-
     };
 
 });
