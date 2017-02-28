@@ -65,6 +65,8 @@ app.controller('calendarCtrl', function($scope) {
                     d.setDate(d.getDate() + 1);
                     if (d.getFullYear() != actual_year) {
                         actual_year = d.getFullYear();
+                        actual_month = d.getMonth();
+                        $scope.start_month = 0;
                         $scope.number_of_year++;
                         $scope.number_of_month = 0;
                         $scope.number_of_week = 0;
@@ -74,8 +76,7 @@ app.controller('calendarCtrl', function($scope) {
                         for(i = 0; i < d.getDay(); i++) {
                             $scope.calendar[$scope.number_of_year][$scope.number_of_month][$scope.number_of_week].push(0);
                         }
-                    }
-                    if (d.getMonth() != actual_month) {
+                    }else if (d.getMonth() != actual_month) {
                         actual_month = d.getMonth();
                         $scope.number_of_month++;
                         $scope.number_of_week = 0;
@@ -92,6 +93,8 @@ app.controller('calendarCtrl', function($scope) {
                 days++;
             }
         }
+
+        console.log($scope.calendar);
     };
 
 });
